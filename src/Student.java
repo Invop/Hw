@@ -1,20 +1,20 @@
 import java.util.Arrays;
 
 public class Student {
-
+    //Змінна Ім'я
     public static String _Name = "DefName";
+    //Змінна Середній бал
     public static String _AvgScore = "0";
-
+    //Масив студентів
      private static String[][] Student = new String[0][2];
-
-     private static String[][]SortedStudent;
      private static int Q = 0;
+     //Конструктор класу
     public Student(String _Name, String _AvgScore){
         this._Name=_Name;
         this._AvgScore=_AvgScore;
         Student = append(Student,this._Name,this._AvgScore);
     }
-
+    //Сортування по імені
     public static void SortByName(int q){
         Q=q;
         String _tempName="";
@@ -32,7 +32,7 @@ public class Student {
             }
         }
     }
-
+    //Сортування за середнім балом
     public static void SortByScore(){
         String _tempName="";
         String _tempScore="";
@@ -50,7 +50,7 @@ public class Student {
         }
     }
 
-
+    //Додавання до масиву нових елементів
     private static String[][] append(String[][] arr, String _elementName , String _elementAvg) {
         String[][] array = new String[arr.length+1][2];
         System.arraycopy(arr, 0, array, 0, arr.length);
@@ -58,16 +58,7 @@ public class Student {
         array[arr.length][1] = _elementAvg;
         return array;
     }
-
-    public static void ReturnStudent(){
-        for (int i = 0; i < Student.length; i++) {
-            for (int j = 0; j < 2; j++) {
-                System.out.print(Student[i][j]+" ");
-            }
-            System.out.println();
-        }
-    }
-
+    //Виведення в консоль
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();

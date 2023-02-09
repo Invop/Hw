@@ -3,17 +3,22 @@ import sun.util.resources.cldr.ga.CalendarData_ga_IE;
 import java.io.IOException;
 
 public class Main {
+    //Змінна Ім'я
     private static String _GetName;
+    //Змінна Середній бал
     private static String _GetAvgScore;
+    //Екземпляр класу Student
     private static Student _newStudent;
+    //Змінна (обране сортування)
     private static int _SortQ;
-    public static void main(String[] args) throws IOException {
 
+    //Виклик методів
+    public static void main(String[] args) throws IOException {
         AddStudent();
         SortOption();
         System.out.println(_newStudent.toString());
     }
-
+    //Вибір методу сортування
     private static void SortOption(){
         System.out.println("Choose sorting option: 1 By name(Ascending) , 2 By name(Descending), 3 By student's GPA.");
         _SortQ = DataInput.getInt();
@@ -27,6 +32,7 @@ public class Main {
         else {System.out.println("please enter a valid value");SortOption();}
     }
 
+    //Отримання даних про студента (з клавіатури)
     private static void AddStudent() throws IOException {
         while (true){
         System.out.println("Enter Name");
@@ -38,6 +44,7 @@ public class Main {
         if(_GetAnswToStop.equals("n"))break;
         }
     }
+    //Перевірка Середнього балу (>0)
     private static void CheckScore() throws IOException {
         System.out.println("Enter Avg Score");
         _GetAvgScore = DataInput.getString();
